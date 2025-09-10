@@ -226,7 +226,8 @@ $$ \sigma_{AB}^{\text{inel}} \approx \int d^{2}b \left[ 1 - e^{-\sigma_{NN}\, T_
 
 This compact expression encapsulates the essential physics of nuclear collisions in the optical Glauber model.
 
-###3.2 Phase Shift Function and Eikonal Phase
+### 3.2 Phase Shift Function and Eikonal Phase
+
 The eikonal phase shift function represents the heart of the mathematical formalism underlying the optical Glauber model, encoding the cumulative effect of the nuclear interaction on the projectile wave function. This function bridges the microscopic nucleon-nucleon interaction with the macroscopic observables measured in nuclear collision experiments.
 
 For a projectile nucleon traversing a nuclear target along a trajectory characterized by impact parameter b, the eikonal phase shift is given by:
