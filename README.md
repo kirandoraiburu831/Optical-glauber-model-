@@ -324,6 +324,8 @@ where ρ₀ is the central density, R is the half-density radius, and a is the s
 
 For lighter nuclei or for computational simplicity, the hard sphere model provides a useful alternative:
 
+$$\rho(r) = \begin{cases} \rho_0 = \frac{3A}{4\pi R^3} & \text{if } r \le R \\ 0 & \text{if } r > R \end{cases}$$
+
 $$ \[\rho(r)=\begin{cases}\rho_0=\dfrac{3M}{4\pi R^3},& r\le R,\\[6pt] 0, & r>R.\end{cases}\] $$
 
 
