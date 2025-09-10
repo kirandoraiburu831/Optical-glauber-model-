@@ -204,3 +204,147 @@ $$ P_A(s_A, b) = 1 - \exp\!\left[-\sigma_{NN}\, T_B(s_A - b)\right]$$
 where TB(s) is the nuclear thickness function of nucleus B:
 
 $$ T_B(s) = \int_{-\infty}^{+\infty} \rho_B(s, z)\, dz $$
+
+with ρB(s,z) representing the nucleon density distribution of nucleus B.
+
+The mathematical elegance of the optical limit formulation becomes apparent when calculating macroscopic collision observables. The total inelastic nucleus-nucleus cross section is obtained by integrating the collision probability over all possible configurations:
+
+$$ \sigma_{AB}^{\text{inel}} = \int d^{2}b \left[ 1 - \prod_{i=1}^{A} \prod_{j=1}^{B} \Bigl( 1 - \sigma_{NN}\, \delta^{(2)}(s_A^{\,i} - s_B^{\,j} + b) \Bigr) \right] $$
+
+In the optical limit, this becomes:
+
+$$ \sigma_{AB}^{\text{inel}} = \int d^{2}b \left[ 1 - \bigl( 1 - \sigma_{NN}\, T_{AB}(b) \bigr)^{AB} \right] $$
+
+where TAB(b) is the nuclear overlap function:
+
+$$ T_{AB}(b) = \frac{1}{AB} \int d^{2}s \; T_A(s)\, T_B(s - b) $$
+
+For sufficiently small values of σNNTAB(b), the expression can be further simplified using the approximation (1-x)^n ≈ e^(-nx) for small x:
+
+$$ \sigma_{AB}^{\text{inel}} \approx \int d^{2}b \left[ 1 - e^{-\sigma_{NN}\, T_{AB}(b)} \right] $$
+
+This compact expression encapsulates the essential physics of nuclear collisions in the optical Glauber model.
+
+###3.2 Phase Shift Function and Eikonal Phase
+The eikonal phase shift function represents the heart of the mathematical formalism underlying the optical Glauber model, encoding the cumulative effect of the nuclear interaction on the projectile wave function. This function bridges the microscopic nucleon-nucleon interaction with the macroscopic observables measured in nuclear collision experiments.
+
+For a projectile nucleon traversing a nuclear target along a trajectory characterized by impact parameter b, the eikonal phase shift is given by:
+
+$$
+\chi(b) = -\frac{1}{\hbar v} \int_{-\infty}^{+\infty} V(b, z)\, dz
+$$
+
+where V(b,z) is the interaction potential experienced by the projectile at transverse position b and longitudinal coordinate z, and v is the projectile velocity. The negative sign ensures that an attractive potential produces a positive phase shift.
+
+For nuclear applications, the interaction potential is constructed from the sum of nucleon-nucleon interactions:
+
+$$
+V(b, z) = \sum_{i=1}^{A} v_{NN}\!\left(b, \, z - z_i\right)
+$$
+
+where the sum runs over all A nucleons in the target nucleus, and vNN represents the nucleon-nucleon interaction potential. In the optical limit, this discrete sum is replaced by an integral over the nuclear density distribution:
+
+$$
+V(b, z) = \int v_{NN}\!\left(\mathbf{r} - \mathbf{r}'\right)\, \rho(\mathbf{r}') \, d^{3}r'
+$$
+
+The key insight of the Glauber approach is that for high-energy collisions, the dominant contribution to the phase shift comes from the imaginary part of the nucleon-nucleon scattering amplitude, which is related to the inelastic nucleon-nucleon cross section through the optical theorem:
+$$
+\Im \bigl[f_{NN}(0)\bigr] = \frac{4\pi}{k}\, \sigma_{NN}
+$$
+
+This relationship allows the phase shift to be expressed in terms of measurable quantities:
+
+$$
+\chi(b) = 2\sigma_{NN} \int_{-\infty}^{+\infty} \rho(b, z)\, dz 
+= 2\sigma_{NN}\, T(b)
+$$
+
+where T(b) is the nuclear thickness function. The factor of 1/2 arises from the relationship between the imaginary part of the forward scattering amplitude and the total cross section.
+
+For nucleus-nucleus collisions, the total phase shift experienced by a nucleon from projectile nucleus A traversing target nucleus B is:
+
+$$
+\chi_{AB}(s, b) = 2\sigma_{NN}\, T_B(s - b)
+$$
+
+where s represents the transverse position of the nucleon within nucleus A, and b is the nuclear impact parameter. The nuclear collision amplitude can then be written as:
+
+$$
+F_{AB}(q) = \frac{2\pi}{i k} \int d^{2}b \; e^{i \mathbf{q} \cdot \mathbf{b}} 
+\left[ 1 - \prod_{i=1}^{A} e^{i \chi_{AB}(s_A^i, b)} \right]
+$$
+
+where the product runs over all nucleons in the projectile nucleus.
+
+The phase shift function also provides insight into the quantum mechanical interference effects that give rise to diffractive structures in nuclear scattering. The real part of the phase shift, which can arise from dispersion relations connecting the real and imaginary parts of the scattering amplitude, leads to refraction effects that modify the angular distribution of scattered particles. However, for most practical applications in high-energy nuclear physics, the imaginary part dominates, and the real part can often be neglected.
+
+An important feature of the eikonal phase shift is its additivity for multiple scattering processes. If a projectile undergoes several sequential interactions, the total phase shift is simply the sum of individual contributions:
+$$
+\chi_{\text{total}} = \sum_i \chi_i
+$$
+This additivity property is crucial for the validity of the optical limit approximation and underlies the interpretation of nuclear collisions as sequences of independent binary nucleon-nucleon interactions.
+
+The phase shift function also provides a natural way to incorporate quantum mechanical correlations and fluctuations. Modern extensions of the Glauber model include event-by-event fluctuations in the nucleon-nucleon cross section, representing color transparency and other quantum chromodynamic effects. These fluctuations modify the phase shift function according to:
+
+$$
+\chi(b) \;\longrightarrow\; \chi(b) \times \left( 1 + \frac{\delta\sigma}{\sigma_{NN}} \right)
+$$
+
+where δσ represents the fluctuation in the effective nucleon-nucleon cross section.
+
+###3.3 Nuclear Thickness Functions
+Nuclear thickness functions constitute the fundamental geometric building blocks of the optical Glauber model, providing the essential link between nuclear structure and collision dynamics. These functions encode the probability distribution for nucleon positions within nuclei, integrated along the collision axis to yield transverse density profiles that determine interaction probabilities.
+
+The nuclear thickness function for a nucleus with A nucleons is mathematically defined as:
+
+$$
+T_A(b) = \int_{-\infty}^{+\infty} \rho_A(b, z)\, dz
+$$
+
+where ρA(b,z) represents the nucleon number density at transverse position b and longitudinal coordinate z. This definition assumes that nuclear density distributions are normalized such that:
+
+$$
+\int \rho_A(\mathbf{r}) \, d^3 r = A
+$$
+
+ensuring that the thickness function integrates to give the total number of nucleons when integrated over the transverse plane.
+
+For spherically symmetric nuclei, which represent the most common case in practical applications, the nuclear density depends only on the radial coordinate r = |r|, and the thickness function can be expressed in terms of the impact parameter b = |b| as:
+
+$$
+T_A(b) = 2 \int_{0}^{\sqrt{R_{\text{max}}^2 - b^2}} \rho_A\bigl(b^2 + z^2\bigr)\, dz
+$$
+where Rmax represents the effective radius beyond which the nuclear density becomes negligible. This integral can be evaluated analytically for simple density profiles or computed numerically for more realistic distributions.
+
+The most widely used parametrization for heavy nuclei is the Woods-Saxon (or Fermi) distribution:
+
+$$
+\rho_A(r) = \frac{\rho_0}{1 + \exp\!\left(\frac{r - R}{a}\right)}
+$$
+
+where ρ₀ is the central density, R is the half-density radius, and a is the surface diffuseness parameter. For this distribution, the thickness function must be computed numerically, although accurate analytical approximations exist for practical applications.
+
+For lighter nuclei or for computational simplicity, the hard sphere model provides a useful alternative:
+
+$$\frac{3A}{4\pi R^3} & \text{if } r \leq R \\ 0 & \text{if } r > R \end{cases} $$ 
+
+In this case, the thickness function has the analytical form: 
+$$ T_A(b) = \begin{cases} \frac{3A}{4\pi R^3} \times 2\sqrt{R^2 - b^2} & \text{if } b \leq R \\ 0 & \text{if } b > R \end{cases} $$ 
+providing a simple geometric interpretation of the nuclear collision process[1][5]. The nuclear overlap function, which plays a central role in calculating collision observables, is constructed from the thickness functions of the two colliding nuclei: 
+
+$$ T_{AB}(b) = \int d^2s \, T_A(\mathbf{s}) T_B(\mathbf{s} - \mathbf{b}) $$ 
+
+This function represents the effective overlap area between the two nuclei when separated by impact parameter b[1][10]. For symmetric collisions (A = B), the overlap function exhibits the expected symmetry properties, while for asymmetric systems, it reflects the geometric differences between projectile and target. An important property of thickness functions is their relationship to experimental observables. The total geometric cross section for nucleus-nucleus interactions can be written as: 
+
+$$ \sigma_{geometric} = \int d^2b \, \Theta(T_{AB}(b)) = \pi (R_A + R_B)^2 $$ 
+
+where Θ is the step function[1].
+
+This provides a baseline geometric cross section that represents the maximum possible interaction cross section in the absence of quantum mechanical transparency effects. Modern implementations of the Glauber model often incorporate more sophisticated nuclear structure information into the thickness functions. For deformed nuclei, the thickness function becomes angle-dependent:
+$$ T_A(b, \phi) = \int_{-\infty}^{+\infty} \rho_A(b, z, \phi) dz $$
+where φ represents the orientation angle of the nuclear symmetry axis relative to the collision axis[25]. This angular dependence is particularly important for collisions involving heavy deformed nuclei like uranium, where the nuclear shape significantly affects collision dynamics. 
+
+Neutron skin effects, arising from the different radial distributions of protons and neutrons in neutron-rich nuclei, can also be incorporated into the thickness functions. For nuclei like ²⁰⁸Pb, where neutrons extend slightly further from the center than protons, separate thickness functions for protons and neutrons can be defined[10][23]: 
+$$ T_{A}^{(p)}(b) = \int_{-\infty}^{+\infty} \rho_A^{(p)}(b, z) dz $$ $$ T_{A}^{(n)}(b) = \int_{-\infty}^{+\infty} \rho_A^{(n)}(b, z) dz $$ 
+The total thickness function is then the sum of proton and neutron contributions, but for certain physics processes, the separate contributions may have different interaction cross sections.
