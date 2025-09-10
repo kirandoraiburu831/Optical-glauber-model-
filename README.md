@@ -302,15 +302,11 @@ Nuclear thickness functions constitute the fundamental geometric building blocks
 
 The nuclear thickness function for a nucleus with A nucleons is mathematically defined as:
 
-$$
-T_A(b) = \int_{-\infty}^{+\infty} \rho_A(b, z)\, dz
-$$
+$$ T_A(b) = \int_{-\infty}^{+\infty} \rho_A(b, z)\, dz $$
 
 where ρA(b,z) represents the nucleon number density at transverse position b and longitudinal coordinate z. This definition assumes that nuclear density distributions are normalized such that:
 
-$$
-\int \rho_A(\mathbf{r}) \, d^3 r = A
-$$
+$$ \int \rho_A(\mathbf{r}) \, d^3 r = A $$
 
 ensuring that the thickness function integrates to give the total number of nucleons when integrated over the transverse plane.
 
@@ -328,10 +324,12 @@ where ρ₀ is the central density, R is the half-density radius, and a is the s
 
 For lighter nuclei or for computational simplicity, the hard sphere model provides a useful alternative:
 
-$$\frac{3A}{4\pi R^3} & \text{if } r \leq R \\ 0 & \text{if } r > R \end{cases} $$ 
+$$ \frac{3A}{4\pi R^3} & \text{if } r \leq R \\ 0 & \text{if } r > R \end{cases} $$ 
 
 In this case, the thickness function has the analytical form: 
-$$ T_A(b) = \begin{cases} \frac{3A}{4\pi R^3} \times 2\sqrt{R^2 - b^2} & \text{if } b \leq R \\ 0 & \text{if } b > R \end{cases} $$ 
+
+$$ T_A(b) = \begin{cases} \frac{3A}{4\pi R^3} \times2\sqrt{R^2 - b^2} & \text{if } b \leq R \\ 0 & \text{if } b > R \end{cases} $$ 
+
 providing a simple geometric interpretation of the nuclear collision process[1][5]. The nuclear overlap function, which plays a central role in calculating collision observables, is constructed from the thickness functions of the two colliding nuclei: 
 
 $$ T_{AB}(b) = \int d^2s \, T_A(\mathbf{s})T_B(\mathbf{s} - \mathbf{b}) $$ 
