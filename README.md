@@ -332,8 +332,6 @@ $$
 \end{cases}
 $$
 
-$$ \frac{3A}{4\pi R^3} & \text{if } r \leq R \\ 0 & \text{if } r > R \end{cases} $$ 
-
 In this case, the thickness function has the analytical form: 
 
 $$ T_A(b) = \begin{cases} \frac{3A}{4\pi R^3} \times2\sqrt{R^2 - b^2} & \text{if } b \leq R \\ 0 & \text{if } b > R \end{cases} $$ 
